@@ -6,10 +6,9 @@ USE cava;
 
 CREATE TABLE reviews (
   id INT auto_increment,
-  review_id int,
   restaurant_id int,
   username varchar(50),
-  date date,
+  date varchar(50),
   overall_rating int,
   food_rating int,
   service_rating int,
@@ -23,7 +22,6 @@ CREATE TABLE reviews (
 
 CREATE TABLE categories (
   id INT auto_increment,
-  review_id int,
   category_id int,
   category varchar (50),
   selected boolean,
