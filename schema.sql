@@ -5,7 +5,7 @@ CREATE DATABASE cava;
 USE cava;
 
 CREATE TABLE reviews (
-  id INT auto_increment,
+  id int auto_increment,
   restaurant_id int,
   username varchar(50),
   date varchar(50),
@@ -22,7 +22,14 @@ CREATE TABLE reviews (
 
 CREATE TABLE categories (
   id INT auto_increment,
-  category_id int,
+  category varchar (50),
+  selected boolean,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE review_categories (
+  id INT auto_increment,
+  reviews_id int,
   category varchar (50),
   selected boolean,
   PRIMARY KEY (id)
