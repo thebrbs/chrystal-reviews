@@ -3,60 +3,6 @@ const mysqlConfig = require('./config.js');
 
 const connection = mysql.createConnection(mysqlConfig);
 
-const categories = [
-  'Special Occasion',
-  'Business Meals',
-  'Live Music',
-  'Good for Groups',
-  'Waterfront',
-  'Scenic View',
-  'Kid-friendly',
-  'Afternoon Coffee',
-  'Romantic',
-  'Good for Anniversaries',
-  'Casual',
-  'Seasonal',
-  'Great for Outdoor Dining',
-  'Neighborhood Gem',
-  'Late-night Find',
-  'Handcrafted Cocktails',
-  'Vegan',
-  'Healthy',
-  'Comfort Food',
-  'Disabled Access',
-  'Fun',
-  'Happy Hour',
-  'Bar Seating',
-  'Tasting Menu',
-  'Quiet Conversation',
-  'Authentic',
-  'Vibrant Bar Scene',
-  'Fit for Foodies',
-  'Worth the Drive',
-  'Notable Wine List',
-  'Quick Bite',
-  'Organic',
-  'Great for Lunch',
-  'Afternoon Tea',
-  'Good for Birthdays',
-  'Hot Spot',
-  'Great for Brunch',
-  'Pre/post Theatre',
-  'Cozy',
-  'Gluten Free Options',
-  'Live Sports',
-  'People Watching',
-  'Creative Cuisine',
-  'Spicy',
-  'Paleo Friendly',
-  'Good for a Date',
-  'Local Ingredients',
-  'Good Vegetarian Options',
-  'Tapas',
-  'Sunday Lunch',
-  'Great Beer'
-];
-
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -95,7 +41,7 @@ for (var i = 1; i < 10; i++) {
   for (var k = 0; k < numberOfCategoriesSelected; k++) {
     let categoryCopy = categories.slice(0);
     let rowCategory = categoryCopy.splice(getRandomInt(0, categoryCopy.length), 1)
-    connection.query(`INSERT INTO cava.review_categories (reviews_id, category, selected) VALUES (${i}, '${rowCategory}', true)`);
+    connection.query(`INSERT INTO cava.review_categories (review_id, category, selected) VALUES (${i}, '${rowCategory}', true)`);
   }
 }
 

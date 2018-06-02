@@ -82,7 +82,7 @@ INSERT INTO categories (category) VALUES
 
 CREATE TABLE review_categories (
   id INT auto_increment,
-  reviews_id int,
+  review_id int,
   category varchar (50),
   selected boolean,
   PRIMARY KEY (id)
