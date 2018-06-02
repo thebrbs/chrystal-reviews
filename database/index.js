@@ -89,7 +89,6 @@ for (var i = 1; i < 10; i++) {
 
   connection.query(insertNewReview, function(err, results, fields) {
     if (err) { throw err; }
-    console.log(results);
   });
   
   let numberOfCategoriesSelected = getRandomInt(1, 51);
@@ -104,7 +103,6 @@ const getAllReviews = function() {
   console.log('response being sent from reviews endpoint');
   connection.query('SELECT * FROM cava.reviews', function(error, results, field) {
     if (error) {throw error;}
-    console.log(results);
   });
 };
 
@@ -112,5 +110,4 @@ getAllReviews();
 
 module.exports = {
   getAllReviews
-  // categories
 };
