@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/src/index.jsx",
+    "start": "nodemon server/src/index.js",
     "react-dev": "webpack -d --watch"
   },
   "dependencies": {

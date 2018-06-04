@@ -21,8 +21,16 @@ CREATE TABLE reviews (
 );
 
 CREATE TABLE categories (
-  id INT auto_increment,
+  id int auto_increment,
   category varchar (50),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE review_categories (
+  id INT auto_increment,
+  reviews_id int,
+  category varchar (50),
+  selected boolean,
   PRIMARY KEY (id)
 );
 
@@ -79,11 +87,3 @@ INSERT INTO categories (category) VALUES
   ('Sunday Lunch'),
   ('Great Beer')
   ;
-
-CREATE TABLE review_categories (
-  id INT auto_increment,
-  review_id int,
-  category varchar (50),
-  selected boolean,
-  PRIMARY KEY (id)
-);
