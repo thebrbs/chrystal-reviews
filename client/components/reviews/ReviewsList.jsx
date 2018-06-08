@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReviewToolbar from './ReviewToolbar.jsx';
 import ReviewListEntry from './ReviewListEntry.jsx';
 
 class ReviewsList extends React.Component {
@@ -9,7 +10,11 @@ class ReviewsList extends React.Component {
 
   render() {
     return (
-      <div><ReviewListEntry/></div>
+      <div>
+        <p>ReviewsList is rendering</p>
+        <ReviewToolbar/>
+        <ReviewListEntry/>
+      </div>
     );
   }
 }

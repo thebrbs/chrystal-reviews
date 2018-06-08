@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Overview from './Overview.jsx';
-import ReviewsList from './ReviewsList.jsx';
+import Overview from './overview/Overview.jsx';
+import ReviewsList from './reviews/ReviewsList.jsx';
 
 const App = () => (
   <div>

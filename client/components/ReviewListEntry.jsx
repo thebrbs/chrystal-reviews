@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const ReviewListEntry = () => (
+const ReviewListEntry = (props) => (
   <div>ReviewListEntry is rendering</div>
 );
 
