@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Summary = (props) => (
+const Summary = props => (
   <div>
     <div><h2>Overall ratings and reviews</h2></div>
     <div>Reviews can only be made by people who have eaten at this restaurant</div>

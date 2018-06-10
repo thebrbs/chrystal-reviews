@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const LovedFor = (props) => (
+const LovedFor = props => (
   <div>
     <div>
       <p>Loved For</p>

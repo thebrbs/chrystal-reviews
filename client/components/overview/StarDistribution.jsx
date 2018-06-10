@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const StarDistribution = (props) => (
+const StarDistribution = props => (
   <div>
     <ul>
       <li><span>5 star reviews</span>

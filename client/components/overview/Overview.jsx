@@ -22,17 +22,20 @@ class Overview extends React.Component {
       noiseLevel : overview.noiseLevel(overview.noise(exampleData)),
       recommended : overview.recommended(exampleData)
     }
+
   }
 
-
-  render() {
+  componentDidMount() {
     axios.get('/reviews')
-      .then((response) => {
+      .then( response => {
         console.log(response);
       })
-      .catch((error) => {
+      .catch( error => {
         console.log(error);
-      });
+      }) 
+  }
+
+  render() {
     return (
       <div>
         <div>
