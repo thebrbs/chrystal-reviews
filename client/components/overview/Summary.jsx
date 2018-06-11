@@ -1,18 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import StarRatings from 'react-star-ratings';
 
 const Summary = props => (
-  <div>
+  <div class="summary">
     <div><h2>Overall ratings and reviews</h2></div>
     <div>Reviews can only be made by people who have eaten at this restaurant</div>
-    <div>{props.restaurant.overallRating} based on recent ratings</div>
-    <div>Individual Ratings here</div>
-      <div>{props.restaurant.foodRating} Food</div>
-      <div>{props.restaurant.serviceRating} Service</div>
-      <div>{props.restaurant.ambienceRating} Ambience</div>
-      <div>{props.restaurant.valueRating} Value</div>
-    <div>Noise: {props.restaurant.noiseLevel}</div>
-    <div>{props.restaurant.recommended} % of people would recommend it to a friend</div>
+    <div class="starRating">  
+      <StarRatings
+        rating={Number(props.restaurant.overallRating)}
+        starRatedColor="red"
+        numberOfStars={5}
+        starDimension="30px"
+        starSpacing="1px"
+      />
+    </div>
+    <div class="overallRating">{props.restaurant.overallRating} based on recent ratings</div>
+      <div id="subRating">
+          <p id="subrating">{props.restaurant.foodRating}</p>
+        <p>Food</p>
+      </div>
+      <div id="subRating">
+        <p id="subrating">{props.restaurant.serviceRating}</p>
+        <p>Service</p>
+      </div>
+      <div id="subRating">
+        <p id="subrating">{props.restaurant.ambienceRating}</p>
+        <p>Ambience</p>
+      </div>
+      <div id="subRating">
+        <p id="subrating">{props.restaurant.valueRating}</p>
+        <p>Value</p>
+      </div>
+    <div id="noise">Noise: {props.restaurant.noiseLevel}</div>
+    <div id="recommended">{props.restaurant.recommended} % of people would recommend it to a friend</div>
   </div>
 );
 
