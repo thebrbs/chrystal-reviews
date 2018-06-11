@@ -1,10 +1,10 @@
-var generateRandomInt= function (min, max) {
+const generateRandomInt = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-var generateUsername = function() {
+const generateUsername = () =>  {
   let text = "";
   let possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   for (let i = 1; i < 5; i++) {
@@ -14,9 +14,23 @@ var generateUsername = function() {
   return text;
 }
 
+const randomDate = () => {
+  let day = JSON.stringify(generateRandomInt(1, 30));
+  let month = () => {
+    let monthNumber = generateRandomInt(1, 12);
+    if (monthNumber < 10) {
+      monthNumber = '0' + JSON.stringify(monthNumber);
+    }
+    return monthNumber;
+  }
+  let year = JSON.stringify(generateRandomInt(2016, 2018));
+
+  return [year, month(), day].join('-');
+}
+
 const restaurantId = generateRandomInt;
 const username = generateUsername;
-const date = JSON.stringify(new Date);
+const date = randomDate;
 const overallRating = generateRandomInt;
 const foodRating = generateRandomInt;
 const serviceRating = generateRandomInt;

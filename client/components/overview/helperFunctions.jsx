@@ -43,7 +43,7 @@ module.exports = {
   valueRating : valueRating,
   noise : noise,
   noiseLevel : noiseLevel,
-  recommended : recommended
+  recommended : recommended,
 };
 
 const overview = module.exports;

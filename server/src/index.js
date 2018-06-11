@@ -9,13 +9,13 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname + '../../../client')));
 
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname + '../../../index.html'));
-// });
-
 app.get('/reviews', (req, res) => {
-  db.getAllReviews();
-  res.status(200).send('Successfully sent back a response to the get request!');
+  db.getAllReviews((err, results) => {
+    if (err) {res.status(500).send(err)}
+    else {
+      res.status(200).send(results);
+    }
+  });
 });
 
 app.listen(port, () => console.log(`CavaTable is listening on port ${port}`));

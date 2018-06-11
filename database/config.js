@@ -1,3 +1,4 @@
 module.exports = {
-  user: 'root'
+  user: 'root',
+  database: 'cava'
 };
