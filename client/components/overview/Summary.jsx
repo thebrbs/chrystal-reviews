@@ -17,26 +17,19 @@ const Summary = props => (
     </div>
     <div class="overallRating">{props.restaurant.overallRating} based on recent ratings</div>
       <div id="subRating">
-          <p id="subrating">{props.restaurant.foodRating}
-          </p>
+          <p id="subrating">{props.restaurant.foodRating}</p>
         <p>Food</p>
       </div>
       <div id="subRating">
-        <p id="subrating">
-        {props.restaurant.serviceRating}
-        </p>
+        <p id="subrating">{props.restaurant.serviceRating}</p>
         <p>Service</p>
       </div>
       <div id="subRating">
-        <p id="subrating">
-        {props.restaurant.ambienceRating}
-        </p>
+        <p id="subrating">{props.restaurant.ambienceRating}</p>
         <p>Ambience</p>
       </div>
       <div id="subRating">
-        <p id="subrating">
-        {props.restaurant.valueRating}
-        </p>
+        <p id="subrating">{props.restaurant.valueRating}</p>
         <p>Value</p>
       </div>
     <div id="noise">Noise: {props.restaurant.noiseLevel}</div>
