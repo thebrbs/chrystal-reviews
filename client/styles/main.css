@@ -1,0 +1,62 @@
+body {
+  font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  background-color: #f1f2f4;
+  font-size: 0.875rem;
+  color: rgb(45, 51, 63);
+  font-weight: normal;
+  line-height: 1.43;
+  margin: 10px;
+}
+
+div {
+  margin: auto;
+}
+
+a {
+  font-style: bold;
+}
+
+.overview {
+  width: 600px;
+}
+
+.summary {
+  width: 600px;
+  margin: 10px;
+}
+
+.starRating {
+  width: 30%;
+  height: 30px;
+  float: left;
+  margin: 0px;
+}
+
+.overallRating {
+  margin-left: 15%;
+  height: 30px;
+  border: 0px;
+  margin: 10px;
+}
+
+#subRating {
+  display: inline-block;
+  width: 20%;
+  height: 10px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 0.4;
+}
+
+#subrating {
+  font-weight: 500;
+  margin: 0px;
+}
+
+#noise {
+  margin: 15px;
+}
+
+#recommended {
+  margin: 15px;
+}
