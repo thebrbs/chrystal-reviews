@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import StarRatings from 'react-star-ratings';
+import reviewFunctions from './reviewHelperFunctions.jsx';
 
-const ReviewListEntry = props => (
+const ReviewListEntry = props => {
+  return (
   <div className="reviewListEntry">
     <div>Diner info here</div>
       <div className="profilePhoto"></div>
@@ -17,8 +19,7 @@ const ReviewListEntry = props => (
             starSpacing="1px"
           />
         </div>
-        <div>{props.review.overall_rating}</div>
-        <div>{props.review.date}</div>
+        <div>Dined on {reviewFunctions.formatDate(new Date(props.review.date))}</div>
         <div>{props.review.body}</div>
         <a>+ Read More</a>
         <a><div><i></i>Report</div></a>
@@ -26,6 +27,6 @@ const ReviewListEntry = props => (
         <hr></hr>
       </div>
   </div>
-);
+);}
 
 export default ReviewListEntry;

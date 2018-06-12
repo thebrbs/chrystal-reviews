@@ -11,11 +11,11 @@ const Summary = props => (
         rating={Number(props.restaurant.overallRating)}
         starRatedColor="red"
         numberOfStars={5}
-        starDimension="30px"
+        starDimension="20px"
         starSpacing="1px"
-      />
+      /> {props.restaurant.overallRating} based on recent ratings
     </div>
-    <div class="overallRating">{props.restaurant.overallRating} based on recent ratings</div>
+    <div class="overallRating">
       <div id="subRating">
           <p id="subrating">{props.restaurant.foodRating}</p>
         <p>Food</p>
@@ -32,6 +32,7 @@ const Summary = props => (
         <p id="subrating">{props.restaurant.valueRating}</p>
         <p>Value</p>
       </div>
+    </div>
     <div id="noise">Noise: {props.restaurant.noiseLevel}</div>
     <div id="recommended">{props.restaurant.recommended} % of people would recommend it to a friend</div>
   </div>

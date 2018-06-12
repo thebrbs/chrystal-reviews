@@ -8,7 +8,7 @@ CREATE TABLE reviews (
   id int auto_increment,
   restaurant_id int,
   username varchar(50),
-  date varchar(50),
+  date date,
   overall_rating int,
   food_rating int,
   service_rating int,

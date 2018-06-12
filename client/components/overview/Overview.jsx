@@ -19,7 +19,12 @@ class Overview extends React.Component {
       ambienceRating : 0,
       valueRating : 0,
       noiseLevel : 0,
-      recommended : false
+      recommended : false,
+      fiveStarReviews : 0,
+      fourStarReviews : 0,
+      threeStarReviews : 0,
+      twoStarReviews : 0,
+      oneStarReviews : 0
     }
 
     this.displayAllReviews = this.displayAllReviews.bind(this);
@@ -41,8 +46,14 @@ class Overview extends React.Component {
           ambienceRating : overview.ambienceRating(response.data),
           valueRating : overview.valueRating(response.data),
           noiseLevel : overview.noiseLevel(overview.noise(response.data)),
-          recommended : overview.recommended(response.data)
+          recommended : overview.recommended(response.data),
+          fiveStarReviews : overview.fiveStarReviews(response.data),
+          fourStarReviews : overview.fourStarReviews(response.data),
+          threeStarReviews : overview.threeStarReviews(response.data),
+          twoStarReviews : overview.twoStarReviews(response.data),
+          oneStarReviews : overview.oneStarReviews(response.data)
         });
+        
       })
       .catch( error => {
         console.log(error);
@@ -57,7 +68,7 @@ class Overview extends React.Component {
         </div>
         <hr></hr>
         <div><Summary restaurant={this.state}/></div>
-        <div><StarDistribution/></div>
+        <div><StarDistribution restaurant={this.state}/></div>
         <div><LovedFor/></div>
         <div>
           <h3>Best Restaurants in {this.state.neighborhood}</h3>
