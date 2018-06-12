@@ -19,8 +19,7 @@ const ReviewListEntry = props => {
             starSpacing="1px"
           />
         </div>
-        <div>{props.review.overall_rating}</div>
-        <div>{reviewFunctions.formatDate(new Date(props.review.date))}</div>
+        <div>Dined on {reviewFunctions.formatDate(new Date(props.review.date))}</div>
         <div>{props.review.body}</div>
         <a>+ Read More</a>
         <a><div><i></i>Report</div></a>

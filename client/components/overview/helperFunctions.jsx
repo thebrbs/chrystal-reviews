@@ -35,6 +35,26 @@ const recommended = (data) => {
   return (recommended / data.length * 100).toFixed(1);
 }
 
+const fiveStarReviews = (data) => {
+  return data.filter(review => review.overall_rating === 5).length;
+}
+
+const fourStarReviews = (data) => {
+  return data.filter(review => review.overall_rating === 4).length;
+}
+
+const threeStarReviews = (data) => {
+  return data.filter(review => review.overall_rating === 3).length;
+}
+
+const twoStarReviews = (data) => {
+  return data.filter(review => review.overall_rating === 2).length;
+}
+
+const oneStarReviews = (data) => {
+  return data.filter(review => review.overall_rating === 1).length;
+}
+
 module.exports = {
   overallRating : overallRating,
   foodRating : foodRating,
@@ -44,6 +64,11 @@ module.exports = {
   noise : noise,
   noiseLevel : noiseLevel,
   recommended : recommended,
+  fiveStarReviews : fiveStarReviews,
+  fourStarReviews : fourStarReviews,
+  threeStarReviews : threeStarReviews,
+  twoStarReviews : twoStarReviews,
+  oneStarReviews : oneStarReviews
 };
 
 const overview = module.exports;
