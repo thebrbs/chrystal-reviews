@@ -4,7 +4,6 @@ body {
   font-size: 0.875rem;
   color: rgb(45, 51, 63);
   font-weight: normal;
-  line-height: 1.43;
   margin: 10px;
 }
 
@@ -16,27 +15,55 @@ a {
   font-style: bold;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .overview {
-  width: 600px;
+  width: 650px;
 }
 
 .summary {
-  width: 600px;
-  margin: 10px;
+  width: 350px;
+  margin: 0px;
+  float: left;
+}
+
+.starDistribution {
+  margin-top: 64px;
+  margin-bottom: 70px;
 }
 
 .starRating {
-  width: 30%;
-  height: 30px;
-  float: left;
-  margin: 0px;
+  width: 100%;
+  height: 10px;
+  padding: 20px;
+  padding-left: 0px;
+  margin-left: 0px;
 }
 
 .overallRating {
-  margin-left: 15%;
+  margin-left: 5%;
   height: 30px;
   border: 0px;
-  margin: 10px;
+  margin: 0px;
+  padding-top: 20px;
+  font-size: 15px;
+}
+
+.starBar {
+  height: 15px;
+  width: 240px;
+  border: 1px solid rgb(216, 217, 219);
+  display: inline-block;
+  margin: 5px;
+}
+
+.starValue {
+  height: 15px;
+  float: left;
+  display: inline-block;
+  margin: 5px;
 }
 
 #subRating {
@@ -59,4 +86,45 @@ a {
 
 #recommended {
   margin: 15px;
+}
+
+#reviewUpdateParameter {
+  height: 21px;
+  width: 256px;
+  display: inline-block;
+}
+
+#fiveStars {
+  height: 15px;
+  width: 200px;
+  background-color: red;
+  margin-left: 0px;
+}
+
+#fourStars {
+  height: 15px;
+  width: 180px;
+  background-color: red;
+  margin-left: 0px;
+}
+
+#threeStars {
+  height: 15px;
+  width: 150px;
+  background-color: red;
+  margin-left: 0px;
+}
+
+#twoStars {
+  height: 15px;
+  width: 100px;
+  background-color: red;
+  margin-left: 0px;
+}
+
+#oneStar {
+  height: 15px;
+  width: 20px;
+  background-color: red;
+  margin-left: 0px;
 }

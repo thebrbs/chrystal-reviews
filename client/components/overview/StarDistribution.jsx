@@ -1,23 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import overview from './helperFunctions.jsx';
 
 const StarDistribution = props => (
-  <div>
+  <div class="starDistribution">
     <ul>
-      <li><span>5 star reviews</span>
-        <div></div>
+      <li class="reviewUpdateParameter">
+        <span class="starValue">5</span>
+        <div class="starBar">
+          <div id="fiveStars"></div>
+        </div>
       </li>
-      <li><span>4 star reviews</span>
-        <div></div>
+      <li class="reviewUpdateParameter">
+        <span class="starValue">4</span>
+        <div class="starBar">
+          <div id="fourStars"></div>
+        </div>
       </li>
-      <li><span>3 star reviews</span>
-        <div></div>
+      <li class="reviewUpdateParameter">
+        <span class="starValue">3</span>
+        <div class="starBar">
+          <div id="threeStars"></div>
+        </div>
       </li>
-      <li><span>2 star reviews</span>
-        <div></div>
+      <li class="reviewUpdateParameter">
+        <span class="starValue">2</span>
+        <div class="starBar">
+          <div id="twoStars"></div>
+        </div>
       </li>
-      <li><span>1 star reviews</span>
-        <div></div>
+      <li class="reviewUpdateParameter">
+        <span class="starValue">1</span>
+        <div class="starBar">
+          <div id="oneStar"></div>
+        </div>
       </li>
     </ul>
   </div>
