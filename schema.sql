@@ -15,7 +15,7 @@ CREATE TABLE reviews (
   ambiance_rating int,
   value_rating int,
   noise_level int,
-  recommended boolean,
+  recommended int,
   body varchar (1000),
   PRIMARY KEY (id)
 );

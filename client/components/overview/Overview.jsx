@@ -39,7 +39,6 @@ class Overview extends React.Component {
       .then( response => {
         this.setState({
           totalReviews : response.data.length,
-          neighborhood : 'SOMA',
           overallRating : overview.overallRating(response.data),
           foodRating : overview.foodRating(response.data),
           serviceRating : overview.serviceRating(response.data),
@@ -70,9 +69,6 @@ class Overview extends React.Component {
         <div><Summary restaurant={this.state}/></div>
         <div><StarDistribution restaurant={this.state}/></div>
         <div><LovedFor/></div>
-        <div>
-          <h3>Best Restaurants in {this.state.neighborhood}</h3>
-        </div>
       </div>  
     );
   }

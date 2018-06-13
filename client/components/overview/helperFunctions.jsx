@@ -32,7 +32,7 @@ const recommended = (data) => {
   for (var i = 0; i < data.length; i++) {
     recommended += data[i].recommended
   }
-  return (recommended / data.length * 100).toFixed(1);
+  return ((recommended / data.length) * 100).toFixed(1);
 }
 
 const fiveStarReviews = (data) => {
