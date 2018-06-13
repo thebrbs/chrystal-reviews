@@ -18,9 +18,9 @@ for (let i = 1; i < 100; i++) {
   }
 }
 
-const getAllReviews = function(callback) {
+const getAllReviews = function(restaurantId, callback) {
   console.log('response being sent from reviews endpoint');
-  connection.query('SELECT * FROM reviews', function(error, results) {
+  connection.query(`SELECT * FROM reviews WHERE restaurant_id=${restaurantId} LIMIT 1500`, function(error, results) {
     if (error) {callback(error, null)}
     else {callback(null, results)}
   });

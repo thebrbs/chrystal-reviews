@@ -41,6 +41,10 @@ progress::-webkit-progress-value {
   background: red;
 }
 
+hr {
+  clear: both;
+}
+
 .reviewlistbutton {
   float: right;
 }
@@ -119,6 +123,11 @@ progress::-webkit-progress-value {
   border-right: 1px solid black;
 }
 
+#categoryRating {
+  font-size: 18px;
+  font-style: bold;
+}
+
 #lastSubRating {
   display: inline-block;
   width: 20%;
@@ -155,19 +164,9 @@ progress::-webkit-progress-value {
 
 #summarydescription {
   clear: both;
+  margin: 10px;
 }
 
 #summarydescriptiontext {
-  font-size: 13px;
-  padding-left: 2px;
-  padding-top: 2px;
-}
-
-#categoryRating {
-  font-size: 20px;
-}
-
-#starrating {
-  float: left;
-  height: 20px;
+  font-size: 14px;
 }

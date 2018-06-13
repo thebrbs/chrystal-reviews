@@ -25,7 +25,7 @@ class ReviewListEntry extends React.Component {
     return (
       <div className="reviewListEntry">
         <div className="dinerInfo">
-          <div className="profilePhoto"><img src="../../../assets/opentable_diner_profile_photo.png" height="50"></img></div>
+          <div className="profilePhoto"><img src="./assets/opentable_diner_profile_photo.png" height="50"></img></div>
           <div><span>OpenTable Diner <b>{this.props.review.username}</b></span></div>
           <div id="starrating">
             <StarRatings
@@ -40,8 +40,8 @@ class ReviewListEntry extends React.Component {
           <div id="reviewbody">          
             <div>{this.state.reviewBody}</div>
             <button onClick={this.toggleFullReview}>+ Read More</button>
-            <button class="reviewlistbutton"><img src="../../../assets/opentable_helpful_icon.png" height="30"></img><span class="reviewlistbutton">Helpful</span></button>
-            <button class="reviewlistbutton"><img vspace="0px" src="../../../assets/opentable_report_icon.png" height="30"></img><span class="reviewlistbutton">Report</span></button>
+            <button class="reviewlistbutton"><img src="./assets/opentable_helpful_icon.png" height="30"></img><span class="reviewlistbutton">Helpful</span></button>
+            <button class="reviewlistbutton"><img vspace="0px" src="./assets/opentable_report_icon.png" height="30"></img><span class="reviewlistbutton">Report</span></button>
           </div>
           <hr></hr>
         </div>

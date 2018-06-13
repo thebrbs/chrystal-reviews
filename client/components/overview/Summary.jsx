@@ -34,12 +34,12 @@ const Summary = props => (
       </div>
     </div>
     <div id="summarydescription">
-      <div id="noise"><img src="../../assets/opentable_noise_icon.png" height="30"></img></div>
+      <div id="noise"><img src="./assets/opentable_noise_icon.png" height="30"></img></div>
       <span id="summarydescriptiontext"><b>Noise:</b> {props.restaurant.noiseLevel}</span>
     </div>
     <div id="summarydescription">
-      <div id="recommended"><img src="../../assets/opentable_recommended_icon.png" height="30"></img></div>
-      <span id="summarydescriptiontext">{props.restaurant.recommended} % of people would recommend it to a friend</span>
+      <div id="recommended"><img src="./assets/opentable_recommended_icon.png" height="30"></img></div>
+      <span id="summarydescriptiontext"><b>{props.restaurant.recommended} % of people</b> would recommend it to a friend</span>
     </div>
   </div>
 );

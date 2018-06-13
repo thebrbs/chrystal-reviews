@@ -26,7 +26,7 @@ class ReviewsList extends React.Component {
   }
 
   displayAllReviews() {
-  axios.get('/reviews')
+  axios.get('/restaurant/1025/reviews')
     .then( response => {
       this.setState({
         reviews: response.data,
@@ -64,7 +64,12 @@ class ReviewsList extends React.Component {
     return (
       <div class="reviewsList">
       <hr></hr>
-        <ReviewToolbar/>
+        Sort by:
+        <select name="sortingData">
+          <option value="first">Newest</option> 
+          <option value="second" selected>Highest Rating</option>
+          <option value="third">Lowest Rating</option>
+        </select>
         {this.state.visibleReviews.map((review) => <ReviewListEntry review={review}/>)}
         <div>
           <button onClick={this.displayPreviousReviews}>Previous</button>

@@ -34,8 +34,8 @@ class Overview extends React.Component {
     this.displayAllReviews();
   }
 
-  displayAllReviews() {
-    axios.get('/reviews')
+  displayAllReviews(props) {
+    axios.get(`/restaurant/${this.props.restaurantId}/reviews`)
       .then( response => {
         this.setState({
           totalReviews : response.data.length,

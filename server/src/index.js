@@ -7,10 +7,10 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname + '../../../client')));
+app.use('/restaurant/:restaurantId', express.static(path.join(__dirname + '../../../client')));
 
-app.get('/reviews', (req, res) => {
-  db.getAllReviews((err, results) => {
+app.get('/restaurant/:restaurantId/reviews', (req, res) => {
+  db.getAllReviews(req.params.restaurantId, (err, results) => {
     if (err) {res.status(500).send(err)}
     else {
       res.status(200).send(results);
