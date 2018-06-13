@@ -7,7 +7,7 @@ const generateRandomInt = (min, max) => {
 const generateUsername = () =>  {
   let text = "";
   let possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  for (let i = 1; i < 5; i++) {
+  for (let i = 1; i < 12; i++) {
     text += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
   }
 
@@ -38,7 +38,7 @@ const ambianceRating = generateRandomInt;
 const valueRating = generateRandomInt;
 const noiseLevel = generateRandomInt;
 const recommended = Math.random() >= 0.5;
-const body = 'Lorem ipsum dolor sit amet, pri id vide homero alienum, nibh nusquam mel no. Pro perfecto atomorum sapientem cu, elit natum ex eum. Est probo qualisque ut. Quo at congue iriure.';
+const body = 'Lorem ipsum dolor sit amet, pri id vide homero alienum, nibh nusquam mel no. Pro perfecto atomorum sapientem cu, elit natum ex eum. Est probo qualisque ut. Quo at congue iriure. Lorem ipsum dolor sit amet, pri id vide homero alienum, nibh nusquam mel no. Pro perfecto atomorum sapientem cu, elit natum ex eum. Est probo qualisque ut. Quo at congue iriure. Lorem ipsum dolor sit amet, pri id vide homero alienum, nibh nusquam mel no. Pro perfecto atomorum sapientem cu, elit natum ex eum. Est probo qualisque ut. Quo at congue iriure. Lorem ipsum dolor sit amet, pri id vide homero alienum, nibh nusquam mel no. Pro perfecto atomorum sapientem cu, elit natum ex eum. Est probo qualisque ut. Quo at congue iriure. Lorem ipsum dolor sit amet, pri id vide homero alienum, nibh nusquam mel no. Pro perfecto atomorum sapientem cu, elit natum ex eum. Est probo qualisque ut. Quo at congue iriure.';
 const categories = [
   'Special Occasion',
   'Business Meals',

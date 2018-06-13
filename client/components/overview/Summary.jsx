@@ -17,24 +17,30 @@ const Summary = props => (
     </div>
     <div class="overallRating">
       <div id="subRating">
-          <p id="subrating">{props.restaurant.foodRating}</p>
+          <p id="subrating"><span id="categoryRating">{props.restaurant.foodRating}</span></p>
         <p>Food</p>
       </div>
       <div id="subRating">
-        <p id="subrating">{props.restaurant.serviceRating}</p>
+        <p id="subrating"><span id="categoryRating">{props.restaurant.serviceRating}</span></p>
         <p>Service</p>
       </div>
       <div id="subRating">
-        <p id="subrating">{props.restaurant.ambienceRating}</p>
+        <p id="subrating"><span id="categoryRating">{props.restaurant.ambienceRating}</span></p>
         <p>Ambience</p>
       </div>
-      <div id="subRating">
-        <p id="subrating">{props.restaurant.valueRating}</p>
+      <div id="lastSubRating">
+        <p id="subrating"><span id="categoryRating">{props.restaurant.valueRating}</span></p>
         <p>Value</p>
       </div>
     </div>
-    <div id="noise">Noise: {props.restaurant.noiseLevel}</div>
-    <div id="recommended">{props.restaurant.recommended} % of people would recommend it to a friend</div>
+    <div id="summarydescription">
+      <div id="noise"><img src="../../assets/opentable_noise_icon.png" height="30"></img></div>
+      <span id="summarydescriptiontext"><b>Noise:</b> {props.restaurant.noiseLevel}</span>
+    </div>
+    <div id="summarydescription">
+      <div id="recommended"><img src="../../assets/opentable_recommended_icon.png" height="30"></img></div>
+      <span id="summarydescriptiontext">{props.restaurant.recommended} % of people would recommend it to a friend</span>
+    </div>
   </div>
 );
 
