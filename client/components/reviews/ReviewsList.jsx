@@ -9,10 +9,16 @@ class ReviewsList extends React.Component {
     super(props);
 
     this.state = {
-      reviews : []
+      reviews : [],
+      visibleReviews : []
     }
 
+    this.start = 0;
+    this.end = 40;
+
     this.displayAllReviews = this.displayAllReviews.bind(this);
+    this.displayNextReviews = this.displayNextReviews.bind(this);
+    this.displayPreviousReviews = this.displayPreviousReviews.bind(this);
   }
 
   componentDidMount() {
@@ -20,10 +26,11 @@ class ReviewsList extends React.Component {
   }
 
   displayAllReviews() {
-  axios.get('/reviews')
+  axios.get('/restaurant/1025/reviews')
     .then( response => {
       this.setState({
-        reviews : response.data.slice(0, 40)
+        reviews: response.data,
+        visibleReviews : response.data.slice(this.start, this.end)
       });
     })
     .catch( error => {
@@ -31,12 +38,43 @@ class ReviewsList extends React.Component {
     }) 
   }
 
+  displayNextReviews() {
+    if (this.start <= this.state.reviews.length) {
+      this.start += 40;
+      this.end += 40;
+    }
+
+    this.setState({
+      visibleReviews : this.state.reviews.slice(this.start, this.end)
+    });
+  }
+
+  displayPreviousReviews() {
+    if (this.start >= 40) {
+      this.start -= 40;
+      this.end -= 40;
+    }
+
+    this.setState({
+      visibleReviews : this.state.reviews.slice(this.start, this.end)
+    });
+  }
+
   render() {
     return (
-      <div>
-        <p>ReviewsList is rendering</p>
-        <ReviewToolbar/>
-        {this.state.reviews.map((review) => <ReviewListEntry review={review}/>)}
+      <div class="reviewsList">
+      <hr></hr>
+        Sort by:
+        <select name="sortingData">
+          <option value="first">Newest</option> 
+          <option value="second" selected>Highest Rating</option>
+          <option value="third">Lowest Rating</option>
+        </select>
+        {this.state.visibleReviews.map((review) => <ReviewListEntry review={review}/>)}
+        <div>
+          <button onClick={this.displayPreviousReviews}>Previous</button>
+          <button onClick={this.displayNextReviews}>Next</button>
+        </div>
       </div>
     );
   }
