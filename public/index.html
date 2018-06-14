@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>CavaTable</title>
+  </head>
+  <body>
+    <div id="Overview"></div>
+    <div id="Menus"></div>
+    <div id="Photos"></div>
+    <div id="Reservations"></div>
+    <div id="Reviews"></div>
+    <script src="/lib/react.development.js"></script>
+    <script src="/lib/react-dom.development.js"></script>
+    <script src="../proxy/proxyServer.js"></script>
+    <script src="/reviews"></script>
+    <script>
+      ReactDOM.render(
+        React.createElement(Reviews),
+        document.getElementById('Reviews')
+      );
+    </script>
+  </body>
+</html>
