@@ -26,7 +26,7 @@ class ReviewsList extends React.Component {
   }
 
   displayAllReviews() {
-  axios.get('/restaurant/1025/reviews')
+  axios.get(`/reviews/restaurant/${this.props.restaurantId}/reviews`)
     .then( response => {
       this.setState({
         reviews: response.data,
