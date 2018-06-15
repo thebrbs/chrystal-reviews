@@ -2,24 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style.css">
     <title>CavaTable</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   </head>
   <body>
-    <div id="Overview"></div>
-    <div id="Menus"></div>
-    <div id="Photos"></div>
-    <div id="Reservations"></div>
-    <div id="Reviews"></div>
-    <script src="/lib/react.development.js"></script>
-    <script src="/lib/react-dom.development.js"></script>
-    <script src="../proxy/proxyServer.js"></script>
-    <script src="/reviews"></script>
-    <script>
-      ReactDOM.render(
-        React.createElement(Reviews),
-        document.getElementById('Reviews')
-      );
-    </script>
+    <div id="reviews"></div>
+    <link rel="stylesheet" href="/reviews/reviewsMain.css">
+    <script src="/reviews/reviewsBundle.js"></script>
   </body>
 </html>

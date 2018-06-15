@@ -62,7 +62,7 @@ class ReviewsList extends React.Component {
 
   render() {
     return (
-      <div class="reviewsList">
+      <div className="reviewsList">
       <hr></hr>
         Sort by:
         <select name="sortingData">

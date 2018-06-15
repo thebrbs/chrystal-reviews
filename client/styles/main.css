@@ -45,6 +45,22 @@ hr {
   clear: both;
 }
 
+.fas {
+  margin-right : 5px;
+  font-size : 20px;
+}
+
+.far {
+  margin-right : 5px;
+  font-size : 20px;
+}
+
+.fa-lg {
+  margin-right : 10px;
+  margin-top: 11px;
+  font-size: 40px;
+}
+
 .reviewlistbutton {
   float: right;
 }

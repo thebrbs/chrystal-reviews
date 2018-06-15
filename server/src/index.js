@@ -7,7 +7,8 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use('/restaurant/:restaurantId', express.static(path.join(__dirname + '../../../client')));
+app.use('/reviewsBundle.js', express.static(path.join(__dirname + '../../../client/dist/bundle.js')));
+app.use('/reviewsMain.css', express.static(path.join(__dirname + '../../../client/styles/main.css')));
 
 app.get('/restaurant/:restaurantId/reviews', (req, res) => {
   db.getAllReviews(req.params.restaurantId, (err, results) => {
