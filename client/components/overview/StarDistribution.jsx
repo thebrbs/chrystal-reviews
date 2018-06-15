@@ -11,12 +11,12 @@ const StarDistribution = props => {
     (props.restaurant.oneStarReviews / props.restaurant.totalReviews) * 100
   ];
   return (
-  <div class="starDistribution">
+  <div className="starDistribution">
     <ul>
       {starPercentage.map((stars, i) => {
-        return (<li class="reviewUpdateParameter">
-          <span class="starValue">{5 - i}</span>
-          <div class="starBar">
+        return (<li className="reviewUpdateParameter">
+          <span className="starValue">{5 - i}</span>
+          <div className="starBar">
             <progress value={stars} max="100">50 %</progress>
           </div>
         </li>)

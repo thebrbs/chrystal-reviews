@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import StarRatings from 'react-star-ratings';
 
 const Summary = props => (
-  <div class="summary">
+  <div className="summary">
     <div><h2>Overall ratings and reviews</h2></div>
     <div>Reviews can only be made by people who have eaten at this restaurant</div>
-    <div class="starRating">  
+    <div className="starRating">  
       <StarRatings
         rating={Number(props.restaurant.overallRating)}
         starRatedColor="red"
@@ -15,7 +15,7 @@ const Summary = props => (
         starSpacing="1px"
       /> {props.restaurant.overallRating} based on recent ratings
     </div>
-    <div class="overallRating">
+    <div className="overallRating">
       <div id="subRating">
           <p id="subrating"><span id="categoryRating">{props.restaurant.foodRating}</span></p>
         <p>Food</p>
@@ -34,11 +34,11 @@ const Summary = props => (
       </div>
     </div>
     <div id="summarydescription">
-      <div id="noise"><i class="fas fa-volume-up" height="30"></i></div>
+      <div id="noise"><i className="fas fa-volume-up" height="30"></i></div>
       <span id="summarydescriptiontext"><b>Noise:</b> {props.restaurant.noiseLevel}</span>
     </div>
     <div id="summarydescription">
-      <div id="recommended"><i class="far fa-thumbs-up" height="30"></i></div>
+      <div id="recommended"><i className="far fa-thumbs-up" height="30"></i></div>
       <span id="summarydescriptiontext"><b>{props.restaurant.recommended} % of people</b> would recommend it to a friend</span>
     </div>
   </div>

@@ -61,7 +61,7 @@ class Overview extends React.Component {
 
   render() {
     return (
-      <div class="overview">
+      <div className="overview">
         <div>
           <h2>What {this.state.totalReviews} People Are Saying</h2>
         </div>
