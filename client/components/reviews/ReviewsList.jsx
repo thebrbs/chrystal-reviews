@@ -43,7 +43,6 @@ class ReviewsList extends React.Component {
   
   chooseSortingFunction(event, callback) {
     let sorter = event  
-    console.log('sorter = ' + sorter);
 
     const sortingFunction = (sorter) => {
       let sortFunction;
@@ -78,7 +77,6 @@ class ReviewsList extends React.Component {
     let selectedValue = event.target.value;
     let instance = this;
     this.chooseSortingFunction(selectedValue, function(result) {
-      console.log(result);
       instance.setState({
         value : selectedValue,
         visibleReviews : instance.state.reviews.sort(result)
