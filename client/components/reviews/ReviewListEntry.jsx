@@ -39,9 +39,9 @@ class ReviewListEntry extends React.Component {
           <div>{this.props.review.overall_rating} Dined on {reviewFunctions.formatDate(new Date(this.props.review.date))}</div>
           <div id="reviewbody">          
             <div>{this.state.reviewBody}</div>
-            <button onClick={this.toggleFullReview}>+ Read More</button>
-            <button className="reviewlistbutton"><i className="far fa-flag"></i><span className="reviewlistbutton">Report</span></button>
-            <button className="reviewlistbutton"><i className="far fa-arrow-alt-circle-up"></i><span className="reviewlistbutton">Helpful</span></button>
+            <button onClick={this.toggleFullReview} className="reviewlistbutton">+ Read More</button>
+            <button id="reviewlistbutton"><i className="far fa-flag"></i><span className="reviewlistbutton">Report</span></button>
+            <button id="reviewlistbutton"><i className="far fa-arrow-alt-circle-up"></i><span className="reviewlistbutton">Helpful</span></button>
           </div>
           <hr></hr>
         </div>
