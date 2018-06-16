@@ -7,26 +7,29 @@ import ReviewListEntry from './ReviewListEntry.jsx';
 class ReviewsList extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       reviews : [],
-      visibleReviews : []
+      visibleReviews : [],
+      value: 'newest'
     }
-
+    
     this.start = 0;
     this.end = 40;
-
+    
     this.displayAllReviews = this.displayAllReviews.bind(this);
     this.displayNextReviews = this.displayNextReviews.bind(this);
     this.displayPreviousReviews = this.displayPreviousReviews.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.chooseSortingFunction = this.chooseSortingFunction.bind(this);
   }
-
+  
   componentDidMount() {
     this.displayAllReviews();
   }
-
+  
   displayAllReviews() {
-  axios.get(`/reviews/restaurant/${this.props.restaurantId}/reviews`)
+    axios.get(`/reviews/restaurant/${this.props.restaurantId}/reviews`)
     .then( response => {
       this.setState({
         reviews: response.data,
@@ -37,13 +40,58 @@ class ReviewsList extends React.Component {
       console.log(error);
     }) 
   }
+  
+  chooseSortingFunction(event, callback) {
+    let sorter = event  
+    console.log('sorter = ' + sorter);
+
+    const sortingFunction = (sorter) => {
+      let sortFunction;
+
+      const sortByDate = (a, b) => (
+        new Date(b.date) - new Date(a.date)
+      )
+  
+      const sortByHighest = (a, b) => (
+        b.overall_rating - a.overall_rating
+      )
+  
+      const sortByLowest = (a, b) => (
+        a.overall_rating - b.overall_rating
+      )
+
+      if (sorter === "newest") {
+        sortFunction = sortByDate;
+      } else if (sorter === "highest") {
+        sortFunction = sortByHighest;
+      } else if (sorter === "lowest") {
+        sortFunction = sortByLowest;
+      }
+
+      callback(sortFunction);
+    }
+
+    sortingFunction(sorter);
+  }
+
+  handleChange(event) {
+    let selectedValue = event.target.value;
+    let instance = this;
+    this.chooseSortingFunction(selectedValue, function(result) {
+      console.log(result);
+      instance.setState({
+        value : selectedValue,
+        visibleReviews : instance.state.reviews.sort(result)
+      }); 
+    });
+  }
 
   displayNextReviews() {
     if (this.start <= this.state.reviews.length) {
       this.start += 40;
       this.end += 40;
     }
-
+    
     this.setState({
       visibleReviews : this.state.reviews.slice(this.start, this.end)
     });
@@ -55,6 +103,7 @@ class ReviewsList extends React.Component {
       this.end -= 40;
     }
 
+
     this.setState({
       visibleReviews : this.state.reviews.slice(this.start, this.end)
     });
@@ -65,10 +114,10 @@ class ReviewsList extends React.Component {
       <div className="reviewsList">
       <hr></hr>
         Sort by:
-        <select name="sortingData">
-          <option value="first">Newest</option> 
-          <option value="second" selected>Highest Rating</option>
-          <option value="third">Lowest Rating</option>
+        <select value={this.state.value} onChange={this.handleChange}>
+          <option value="newest">Newest</option> 
+          <option value="highest">Highest Rating</option>
+          <option value="lowest">Lowest Rating</option>
         </select>
         {this.state.visibleReviews.map((review) => <ReviewListEntry review={review}/>)}
         <div>
