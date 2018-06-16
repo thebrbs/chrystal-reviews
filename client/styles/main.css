@@ -58,9 +58,17 @@ hr {
   margin-top: 0px;
 }
 
+.overview {
+  padding: 1.25rem;
+}
+
 .profilePhoto {
   height: 50px;
   float: left;
+}
+
+.reviewsList {
+  padding: 1.25rem;
 }
 
 .summary {
@@ -108,6 +116,11 @@ hr {
 
 .reviewListEntry {
   line-height: 25px;
+}
+
+#filterReviews {
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 #subRating {

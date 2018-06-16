@@ -63,7 +63,7 @@ class Overview extends React.Component {
     return (
       <div className="overview">
         <div>
-          <h2>What {this.state.totalReviews} People Are Saying</h2>
+          <h2><b>What {this.state.totalReviews} People Are Saying</b></h2>
         </div>
         <hr></hr>
         <div><Summary restaurant={this.state}/></div>

@@ -4,7 +4,7 @@ import StarRatings from 'react-star-ratings';
 
 const Summary = props => (
   <div className="summary">
-    <div><h2>Overall ratings and reviews</h2></div>
+    <div><b>Overall ratings and reviews</b></div>
     <div>Reviews can only be made by people who have eaten at this restaurant</div>
     <div className="starRating">  
       <StarRatings

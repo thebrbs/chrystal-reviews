@@ -111,8 +111,8 @@ class ReviewsList extends React.Component {
     return (
       <div className="reviewsList">
       <hr></hr>
-        Sort by:
-        <select value={this.state.value} onChange={this.handleChange}>
+        <p>Sort by:</p>
+        <select value={this.state.value} onChange={this.handleChange} id="filterReviews">
           <option value="newest">Newest</option> 
           <option value="highest">Highest Rating</option>
           <option value="lowest">Lowest Rating</option>
