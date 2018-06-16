@@ -97,6 +97,7 @@ hr {
   margin: 0px;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-bottom: 30px;
   font-size: 15px;
 }
 
@@ -149,7 +150,7 @@ hr {
 
 #subrating {
   font-weight: 500;
-  margin: 0px;
+  margin-bottom: 1rem;
 }
 
 #noise {
