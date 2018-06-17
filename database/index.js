@@ -3,8 +3,8 @@ const mysqlConfig = require('./config.js');
 const generateData = require('./generateData.js');
 const connection = mysql.createConnection(mysqlConfig);
 
-for (let i = 1; i < 100; i++) {
-  let insertNewReview = `INSERT INTO reviews (restaurant_id, username, date, overall_rating, food_rating, service_rating, ambiance_rating, value_rating, noise_level, recommended, body) VALUES (${generateData.restaurantId(1001, 1100)}, '${generateData.username()}', '${generateData.date()}', ${generateData.overallRating(1, 6)}, ${generateData.foodRating(1, 6)}, ${generateData.serviceRating(1, 6)}, ${generateData.ambianceRating(1, 6)}, ${generateData.valueRating(1, 6)}, ${generateData.noiseLevel(1, 5)}, ${generateData.recommended(0, 2)}, '${generateData.body}');`
+for (let i = 1; i < 5; i++) {
+  let insertNewReview = `INSERT INTO reviews (restaurant_id, username, date, overall_rating, food_rating, service_rating, ambiance_rating, value_rating, noise_level, recommended, body) VALUES (${generateData.restaurantId(1001, 1004)}, '${generateData.username()}', '${generateData.date()}', ${generateData.overallRating(1, 6)}, ${generateData.foodRating(1, 6)}, ${generateData.serviceRating(1, 6)}, ${generateData.ambianceRating(1, 6)}, ${generateData.valueRating(1, 6)}, ${generateData.noiseLevel(1, 5)}, ${generateData.recommended(0, 2)}, '${generateData.body}');`
 
   connection.query(insertNewReview, function(err, results, fields) {
     if (err) { throw err; }

@@ -1,4 +1,4 @@
-const port = 3002;
+const port = 8081;
 const bodyParser = require('body-parser');
 const db = require('../../database/index.js');
 const path = require('path');
@@ -6,6 +6,11 @@ const express = require('express');
 const app = express();
 
 app.use(bodyParser.json());
+
+app.use("/", function(req, res, next) {
+  console.log("the request URL is " + req.url);
+  next();
+});
 
 app.use('/reviewsBundle.js', express.static(path.join(__dirname + '../../../client/dist/bundle.js')));
 app.use('/reviewsMain.css', express.static(path.join(__dirname + '../../../client/styles/main.css')));
