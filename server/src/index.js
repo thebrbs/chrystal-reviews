@@ -17,8 +17,9 @@ app.use('/reviewsMain.css', express.static(path.join(__dirname + '../../../clien
 
 app.get('/restaurant/:restaurantId/reviews', (req, res) => {
   db.getAllReviews(req.params.restaurantId, (err, results) => {
-    if (err) {res.status(500).send(err)}
-    else {
+    if (err) {
+      res.status(500).send(err);
+    } else {
       res.status(200).send(results);
     }
   });
@@ -26,8 +27,9 @@ app.get('/restaurant/:restaurantId/reviews', (req, res) => {
 
 app.post('/restaurant/reviews', (req, res) => {
   db.post(req.params, (err, results) => {
-    if (err) {res.status(500).send(err)}
-    else {
+    if (err) {
+      res.status(500).send(err);
+    } else {
       res.status(201);
     }
   });
@@ -35,8 +37,9 @@ app.post('/restaurant/reviews', (req, res) => {
 
 app.put('/restaurant/:restaurantId/reviews', (req, res) => {
   db.put(req.params.restaurantId, (err, results) => {
-    if (err) {res.status(500).send(err)}
-    else {
+    if (err) {
+      res.status(500).send(err);
+    } else {
       res.status(202);
     }
   });
@@ -44,8 +47,9 @@ app.put('/restaurant/:restaurantId/reviews', (req, res) => {
 
 app.delete('/restaurant/:restaurantId/reviews', (req, res) => {
   db.delete(req.params.restaurantId, (err, results) => {
-    if (err) {res.status(404).send(err)}
-    else {
+    if (err) {
+      res.status(404).send(err);
+    } else {
       res.status(204);
     }
   });
