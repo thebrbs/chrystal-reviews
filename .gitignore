@@ -1,3 +1,5 @@
 node_modules/
 client/dist/bundle.js
 database/config.js
+.DS_Store
+database/table.csv
