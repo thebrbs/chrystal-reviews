@@ -1,27 +1,25 @@
 const faker = require('faker');
 const fs = require('fs');
 
-const getRandomInt = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * ((max - min) + 1)) + min;
-};
+const getRandomInt = (min, max) => Math.floor(Math.random() * ((max - min) + 1)) + min;
+
 
 const randomDate = () => {
   const day = JSON.stringify(getRandomInt(1, 30));
   const month = () => {
     let monthNumber = getRandomInt(1, 12);
     if (monthNumber < 10) {
-      monthNumber = '0' + JSON.stringify(monthNumber);
+      monthNumber = `0${monthNumber}`;
     }
     return monthNumber;
   };
   const year = JSON.stringify(getRandomInt(2008, 2017));
-
   return [year, month(), day].join('-');
 };
 
 const randomBoolean = () => Math.random() >= 0.5;
+
+const getCsvLine = index => `${index},${getRandomInt(1, 10000000)},${faker.internet.userName()},${randomDate()},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 4)},${randomBoolean()},${faker.lorem.sentences(getRandomInt(1, 7))}\n`;
 
 const writeString = fs.createWriteStream('table.csv');
 
@@ -31,11 +29,14 @@ const writeCsv = (writer) => {
   const write = () => {
     let ok = true;
     do {
+      if (i % 1000000 === 0) {
+        console.log(`${i} have been written`);
+      }
       if (i === 50000000) {
-        writer.write(`${i},${getRandomInt(1, 10000000)},${faker.internet.userName()},${randomDate()},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 4)},${randomBoolean()},${faker.lorem.sentences(getRandomInt(1, 7))}\n`);
+        writer.write(getCsvLine(i));
         writer.end();
       } else {
-        ok = writer.write(`${i},${getRandomInt(1, 10000000)},${faker.internet.userName()},${randomDate()},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 5)},${getRandomInt(1, 4)},${randomBoolean()},${faker.lorem.sentences(getRandomInt(1, 7))}\n`);
+        ok = writer.write(getCsvLine(i));
       }
       i += 1;
     } while (i <= 50000000 && ok);
