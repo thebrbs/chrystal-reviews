@@ -16,7 +16,7 @@ app.use('/reviewsBundle.js', express.static(path.join(__dirname + '../../../clie
 app.use('/reviewsMain.css', express.static(path.join(__dirname + '../../../client/styles/main.css')));
 
 app.get('/restaurant/:restaurantId/reviews', (req, res) => {
-  db.getAllReviews(req.params.restaurantId, (err, results) => {
+  db.getRestaurantReviews(req.params.restaurantId, (err, results) => {
     if (err) {
       res.status(500).send(err);
     } else {
@@ -26,7 +26,7 @@ app.get('/restaurant/:restaurantId/reviews', (req, res) => {
 });
 
 app.post('/restaurant/reviews', (req, res) => {
-  db.post(req.params, (err, results) => {
+  db.addReview(req.params, (err, results) => {
     if (err) {
       res.status(500).send(err);
     } else {

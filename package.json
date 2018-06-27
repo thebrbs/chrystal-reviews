@@ -13,15 +13,18 @@
     "mysql": "mysql -u root < schema.sql"
   },
   "dependencies": {
+    "async": "^2.6.1",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.1",
+    "cassandra-driver": "^3.5.0",
     "express": "^4.16.3",
     "express-http-proxy": "^1.2.0",
     "faker": "^4.1.0",
     "mongoose": "^5.1.3",
     "mysql": "^2.15.0",
     "nodemon": "^1.17.5",
+    "pg": "^7.4.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
