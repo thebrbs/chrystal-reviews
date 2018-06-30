@@ -1,0 +1,25 @@
+config:
+  target: 'http://localhost:8081'
+  processor: './randomize.js'
+  phases:
+    - duration: 60
+      arrivalRate: 10
+scenarios:
+  - flow:
+    - loop:
+      - function: 'generateRandomData'
+      - post:
+          url: "/restaurant/reviews"
+          json:
+            restaurant_id: "{{ restaurantId }}"
+            username: "{{ username }}"
+            date: "{{ date }}"
+            overall_rating: "{{ overall }}"
+            food_rating: "{{ food }}"
+            service_rating: "{{ service }}"
+            ambience_rating: "{{ ambience }}"
+            value_rating: "{{ value }}"
+            noise_level: "{{ noise }}"
+            recommended: "{{ recommended }}"
+            body: "{{ body }}"
+      count: 300

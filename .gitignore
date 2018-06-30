@@ -3,3 +3,6 @@ client/dist/bundle.js
 database/config.js
 .DS_Store
 reviews.csv
+newrelic.js
+newrelic_agent.log
+bundle.js

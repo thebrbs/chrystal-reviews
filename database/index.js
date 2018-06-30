@@ -1,13 +1,12 @@
-const pg = require('pg');
+const { Pool } = require('pg');
 
-const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/cava';
-const client = new pg.Client(connectionString);
-client.connect();
+const pool = new Pool({ database: 'cava' });
 
-const addReview = (restaurantId, username, date, overall, food, service, ambience, value, noise, recommended, body, callback) => {
-  console.log(`successful creation of username: ${username} review for restaurant: ${restaurantId} on db`);
-  client.query(`INSERT INTO reviews (restaurant_id,username,date,overall_rating,food_rating,service_rating,ambience_rating,value_rating,noise_level,recommended,body) VALUES (${restaurantId}, ${username}, ${date}, ${overall}, ${food}, ${service}, ${ambience}, ${value}, ${noise}, ${recommended}, ${body})`, (error, results) => {
+const addReview = (params, callback) => {
+  const q = 'INSERT INTO reviews (restaurant_id,username,date,overall_rating,food_rating,service_rating,ambience_rating,value_rating,noise_level,recommended,body) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)';
+  pool.query(q, [params.restaurant_id, params.username, params.date, params.overall_rating, params.food_rating, params.service_rating, params.ambience_rating, params.value_rating, params.noise_level, params.recommended, params.body], (error, results) => {
     if (error) {
+      console.log(error);
       callback(error, null);
     } else {
       callback(null, results);
@@ -16,8 +15,7 @@ const addReview = (restaurantId, username, date, overall, food, service, ambienc
 };
 
 const getRestaurantReviews = (restaurantId, callback) => {
-  console.log(`successful read of restaurant: ${restaurantId} reviews on db`);
-  client.query(`SELECT * FROM reviews WHERE restaurant_id=${restaurantId}`, (error, results) => {
+  pool.query(`SELECT * FROM reviews WHERE restaurant_id=${restaurantId}`, (error, results) => {
     if (error) {
       callback(error, null);
     } else {
@@ -28,7 +26,7 @@ const getRestaurantReviews = (restaurantId, callback) => {
 
 const updateReviewBody = (restaurantId, username, body, callback) => {
   console.log(`successful update of ${username}'s review for restaurant: ${restaurantId} on db`);
-  client.query(`UPDATE reviews SET body = ${body} WHERE restaurant_id = ${restaurantId} AND username = ${username}`, (error, results) => {
+  pool.query(`UPDATE reviews SET body = ${body} WHERE restaurant_id = ${restaurantId} AND username = ${username}`, (error, results) => {
     if (error) {
       callback(error, null);
     } else {
@@ -39,7 +37,7 @@ const updateReviewBody = (restaurantId, username, body, callback) => {
 
 const deleteRestaurantReviews = (restaurantId, callback) => {
   console.log(`successful deletion of restaurant: ${restaurantId} reviews on db`);
-  client.query(`DELETE FROM reviews WHERE restaurant_id=${restaurantId}`, (error, results) => {
+  pool.query(`DELETE FROM reviews WHERE restaurant_id=${restaurantId}`, (error, results) => {
     if (error) {
       callback(error, null);
     } else {
@@ -50,7 +48,7 @@ const deleteRestaurantReviews = (restaurantId, callback) => {
 
 const deleteUserReviews = (username, callback) => {
   console.log(`successful deletion of all ${username}'s reviews on db`);
-  client.query(`DELETE FROM reviews WHERE username=${username}`, (error, results) => {
+  pool.query(`DELETE FROM reviews WHERE username=${username}`, (error, results) => {
     if (error) {
       callback(error, null);
     } else {
