@@ -1,12 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import StarRatings from 'react-star-ratings';
 
 const Summary = props => (
   <div className="summary">
     <div><b>Overall ratings and reviews</b></div>
     <div>Reviews can only be made by people who have eaten at this restaurant</div>
-    <div className="starRating">  
+    <div className="starRating">
       <StarRatings
         rating={Number(props.restaurant.overallRating)}
         starRatedColor="red"
@@ -17,7 +16,7 @@ const Summary = props => (
     </div>
     <div className="overallRating">
       <div id="subRating">
-          <p id="subrating"><span id="categoryRating">{props.restaurant.foodRating}</span></p>
+        <p id="subrating"><span id="categoryRating">{props.restaurant.foodRating}</span></p>
         <p>Food</p>
       </div>
       <div id="subRating">
