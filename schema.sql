@@ -15,8 +15,8 @@ CREATE TABLE IF NOT EXISTS reviews (
   noise_level smallint,
   recommended smallint,
   body varchar(1000),
-  PRIMARY KEY (id, restaurant_id)
+  PRIMARY KEY (restaurant_id, id)
 );
 
-\COPY reviews(restaurant_id,username,date,overall_rating,food_rating,service_rating,ambience_rating,value_rating,noise_level,recommended,body) FROM 'reviews.csv' DELIMITER ',';
+\COPY reviews(restaurant_id,username,date,overall_rating,food_rating,service_rating,ambience_rating,value_rating,noise_level,recommended,body) FROM 'reviews.csv' DELIMITER ',' CSV HEADER;
 
