@@ -1,0 +1,24 @@
+config:
+  target: 'http://localhost:8081'
+  phases:
+    - duration: 60
+      arrivalRate: 1
+    - duration: 120
+      arrivalRate: 1
+      rampTo: 15
+    - duration: 120
+      arrivalRate: 15
+    - duration: 80
+      arrivalRate: 17
+    - duration: 60
+      arrivalRate: 17
+      rampTo: 1
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    - loop:
+      - get:
+          url: "/restaurant/{{$randomNumber(1, 10000000)}}/reviews"
+      count: 180
